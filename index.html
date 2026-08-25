@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="calculator">
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <h2>🧮 Smart Calculator</h2>
+        <button id="themeToggle" class="theme-btn">🌙</button>
+    </div>
+
+    <!-- Display -->
+    <input
+        type="text"
+        id="display"
+        placeholder="0"
+        readonly
+    >
+
+    <!-- Copy & History -->
+    <div class="action-buttons">
+        <button id="copyBtn">📋 Copy</button>
+        <button id="historyBtn">🕒 History</button>
+    </div>
+
+    <!-- Calculator Buttons -->
+    <div class="buttons">
+
+        <button class="operator" onclick="clearDisplay()">AC</button>
+        <button class="operator" onclick="deleteLast()">DEL</button>
+        <button class="operator" onclick="appendValue('%')">%</button>
+        <button class="operator" onclick="appendValue('/')">÷</button>
+
+        <button onclick="appendValue('7')">7</button>
+        <button onclick="appendValue('8')">8</button>
+        <button onclick="appendValue('9')">9</button>
+        <button class="operator" onclick="appendValue('*')">×</button>
+
+        <button onclick="appendValue('4')">4</button>
+        <button onclick="appendValue('5')">5</button>
+        <button onclick="appendValue('6')">6</button>
+        <button class="operator" onclick="appendValue('-')">−</button>
+
+        <button onclick="appendValue('1')">1</button>
+        <button onclick="appendValue('2')">2</button>
+        <button onclick="appendValue('3')">3</button>
+        <button class="operator" onclick="appendValue('+')">+</button>
+
+        <button class="zero" onclick="appendValue('0')">0</button>
+        <button onclick="appendValue('.')">.</button>
+        <button class="equal" onclick="calculate()">=</button>
+
+    </div>
+
+    <!-- History -->
+    <div class="history-panel" id="historyPanel">
+
+        <div class="history-heading">
+            <h3>Calculation History</h3>
+            <button id="clearHistoryBtn">Clear</button>
+        </div>
+
+        <ul id="historyList">
+            <li class="empty-history">No calculations yet</li>
+        </ul>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
